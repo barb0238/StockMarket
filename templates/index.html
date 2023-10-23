@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit</title>
+</head>
+<body>
+
+<h2>Add a new stock</h2>
+<form action="/" method="post">
+    Name: <input type="text" name="name"><br>
+    Symbol: <input type="text" name="symbol"><br>
+    Current Price: <input type="text" name="currentPrice"><br>
+    Highest Price: <input type="text" name="highestPrice"><br>
+    Lowest Price: <input type="text" name="lowestPrice"><br>
+    <input type="submit" value="Add Stock">
+</form>
+
+<h2>Current Stocks</h2>
+<ul>
+    {% for stock in stocks %}
+    <!-- Iterates through stocks in a list -->
+        <li>{{ stock.name }} ({{ stock.symbol }})-- Current: {{ stock.currentPrice }}, Highest: {{ stock.highestPrice }}, Lowest: {{ stock.lowestPrice }}
+            
+        </li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>

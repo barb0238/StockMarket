@@ -1,0 +1,26 @@
+type Stock {
+  #unique identifier
+  id: Int!
+  #stock name
+  name: String!
+  #ticker symbol
+  symbol: String!
+  #price at the moment
+  currentPrice: Float!
+  #highest it's been
+  highestPrice: Float!
+  #lowest it's been
+  lowestPrice: Float!
+}
+
+type Query {
+  stocks: [Stock!]! #retrieve all stocks
+  stock(id: Int!): Stock #retrieve stocks with specified id
+}
+
+type Mutation{
+  #I didn't add the other CRUDs because they weren't mentioned
+  addStock(name: String!, symbol: String!, currentPrice: Float!, highestPrice: Float!,  lowestPrice: Float!): Stock! #looks like it returns an object of type stock
+
+
+}
